@@ -1,0 +1,73 @@
+@use '../../variables.scss' as vars;
+
+.barchart {
+  background-color: vars.$color-primary;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 15px auto;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    content: '';
+    height: 2px;
+    top: 20%;
+    left: 10%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='80%25' height='100%25' fill='none' stroke='%23FFFFFF99' stroke-width='5' stroke-dasharray='14' stroke-dashoffset='4' stroke-linecap='square'/%3e%3c/svg%3e");
+    z-index: 1;
+  }
+
+  &_section {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .data_set {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20px;
+    font-size: 10px;
+    height: 100%;
+
+    &-bar {
+      border-radius: 10px 10px 0 0;
+      background-color: rgba(255, 255, 255, 0.378);
+      width: 20px;
+    }
+
+    &:nth-child(odd) {
+      .data-bar {
+        background-color: vars.$color-secondary;
+      }
+    }
+  }
+
+  .y_axis {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
