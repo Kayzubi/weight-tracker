@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './barchart.scss'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const BarChart = () => {
+interface Props {
+  barColors?: string
+}
+
+const BarChart: FC<Props> = ({ barColors }) => {
   const yValues = [2, 4, 6, 8, 10, 12]
   const dataSet = [
     {
@@ -51,9 +55,10 @@ const BarChart = () => {
             {dataSet.map((item) => (
               <div key={item.label} className='data'>
                 <motion.div
+                  style={{ backgroundColor: barColors && barColors }}
                   initial={{ height: '0' }}
                   animate={{ height: `${(item.value / maxValue) * 100}%` }}
-                  transition={{ duration: 2 }}
+                  transition={{ duration: 1 }}
                   className='data-bar'></motion.div>
                 <span className='data-label'>{item.label}</span>
               </div>

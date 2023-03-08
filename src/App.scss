@@ -1,3 +1,4 @@
+@use './variables.scss' as vars;
 @import url('https://fonts.cdnfonts.com/css/gilroy-bold');
 
 /* reset browser default */
@@ -26,12 +27,12 @@ a {
 }
 
 body {
-  background: #f6f6f6;
+  background: #f6f6f6 !important;
   padding-top: 20px;
   padding-bottom: 100px;
   line-height: 1;
   color: black;
-  font-family: 'Gilroy-Regular', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 section {
@@ -87,4 +88,11 @@ img {
 
 .app_container {
   position: relative;
+}
+
+.overview_chart {
+  @include vars.box;
+  height: 250px;
+  background-color: vars.$color-primary;
+  padding: 20px 5px;
 }

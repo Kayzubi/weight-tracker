@@ -1,3 +1,13 @@
 //Colors
 $color-primary: #7b66ff;
 $color-secondary: #c3ff4d;
+
+//Box Shabow
+$box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+@mixin box {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}

@@ -1,17 +1,13 @@
 @use '../../variables.scss' as vars;
 
 .barchart {
-  background-color: vars.$color-primary;
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 10px;
-  width: 100%;
-  max-width: 800px;
   margin: 15px auto;
-  height: 250px;
+  height: 100%;
   display: flex;
   align-items: center;
-  padding: 20px;
+  // padding: 20px;
   position: relative;
   overflow: hidden;
 
